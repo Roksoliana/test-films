@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: ListFilmsComponent },
   { path: 'cart', component: CartComponent },
   { path: ':id', component: FilmComponent },
+  { path: 'cart/:id', component: FilmComponent },
 ];
 
 @NgModule({

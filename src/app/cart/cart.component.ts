@@ -11,13 +11,13 @@ public films: any[];
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.getData();    
+    this.getData();
   }
   private getData(): void {
     this.films = this.dataService.getLocalStorage('cart');
   }
   removeData(film) {
-    this.films = this.films.filter(i=>i.Title!=film.Title);
+    this.films = this.films.filter(i => i.Title !== film.Title);
     this.dataService.setLocalStorage('cart', this.films);
   }
 }

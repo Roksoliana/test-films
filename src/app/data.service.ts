@@ -13,7 +13,7 @@ export class DataService {
       this.setLocalStorage('cart', []);
     }
   }
-  getData(i:string) {
+  getData(i: string) {
     return this.http.get(env.apiUrl + '&s=' + i);
   }
   getFilm(id) {

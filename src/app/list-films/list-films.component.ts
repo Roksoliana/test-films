@@ -13,15 +13,17 @@ queryField: FormControl = new FormControl();
 
   constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {    
-    this.queryField.valueChanges.subscribe( 
+  ngOnInit(): void {
+    this.queryField.valueChanges.subscribe(
       result => this.getData(result)
     );
   }
-  getData(result){
+  getData(result) {
     this.dataService.getData(result)
     .subscribe(
-      i => this.films = i
+      i => {
+        this.films = i;
+      }
     );
   }
   addtoCart(data): void {
