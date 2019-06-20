@@ -1,0 +1,13 @@
+ul{
+    margin-bottom: 20px;
+    width: 300px;
+}
+li{
+    font-weight: 500;
+}
+li span{
+    font-weight: 100;
+}
+h2 span{
+    cursor: pointer;
+}

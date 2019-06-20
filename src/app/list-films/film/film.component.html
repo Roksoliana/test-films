@@ -1,0 +1,24 @@
+<div *ngIf="!film; else elseBlock">
+  <h1>Даного фільма не існує</h1>
+</div>
+<ng-template #elseBlock>
+  <h2>{{film.Title | uppercase}} Details <span (click)="addtoCart(film)">&#9829;</span></h2>
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
+        <img src={{film.Poster}} default="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdAYsT9tW8TYirUm-msP4lWP7D4Ez4GHGwztoIKmBbt4-zHNFH" alt={{film.Title}} class="img-fluid">
+      </div>
+      <div class="col-lg-8 col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item">Year: <span>{{film.Year}}</span></li>
+          <li class="list-group-item">Country: <span>{{film.Country}}</span></li>
+          <li class="list-group-item">Runtime: <span>{{film.Runtime}}</span></li>
+          <li class="list-group-item">Language: <span>{{film.Language}}</span></li>
+          <li class="list-group-item">Actors: <span>{{film.Actors}}</span></li>
+          <li class="list-group-item">Writer: <span>{{film.Writer}}</span></li>
+        </ul>
+        <p>
+          {{film.Plot}}
+        </p>
+        </div>
+    </div>
+</ng-template>

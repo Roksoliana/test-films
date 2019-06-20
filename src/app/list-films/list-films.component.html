@@ -1,0 +1,23 @@
+<h3>
+  <input type="text" placeholder="find film" [formControl]="queryField" class="form-control">
+</h3>
+<h2>{{films.Error}}</h2>
+<div *ngIf="!films; else elseBlock">
+  Введіть назву фільму
+</div>
+<ng-template #elseBlock>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" *ngFor="let film of films.Search">
+      
+      <div class="block-film">
+        <a routerLink={{film.imdbID}} class="item">
+          <img src={{film.Poster}} alt={{film.Title}} class="img-fluid" default="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdAYsT9tW8TYirUm-msP4lWP7D4Ez4GHGwztoIKmBbt4-zHNFH">
+        </a>
+        <ul class="list-group list-group-horizontal-sm">
+          <li class="list-group-item">{{film.Title}}</li>
+          <li class="list-group-item"><a href="#" (click)="addtoCart(film)">&#9829;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-template>

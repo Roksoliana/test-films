@@ -1,0 +1,14 @@
+<div *ngIf="!films.length; else ElseBlock">
+    <h1>Ви нічого не обрали</h1>
+</div>
+
+<ng-template #ElseBlock>  
+  <h1>You liked</h1>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center"
+            *ngFor="let film of films">
+          {{film.Title}}
+          <span class="badge badge-danger badge-pill" (click)="removeData(film)">Remove film</span>
+        </li>
+    </ul>
+</ng-template>
